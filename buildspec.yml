@@ -12,6 +12,7 @@ phases:
     commands:
       - echo Configuring AWS credentials...
       - echo Initializing Terraform...
+      - cd S3
       - terraform init
   build:
     commands:
