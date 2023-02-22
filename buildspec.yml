@@ -10,8 +10,10 @@ phases:
       - rm terraform.zip
   pre_build:
     commands:
-      - echo Configuring AWS credentials...
-      - echo Initializing Terraform...
+      - sed -i 's@name_B@'"$name_B"'@' terraform.tfvars
+      - sed -i 's@tag_B@'"$tag_B"'@' terraform.tfvars
+      - sed -i 's@env_B@'"$env_B"'@' terraform.tfvars
+      - sed -i 's@acl_B@'"$acl_B"'@' terraform.tfvars
       - terraform init
   build:
     commands:
