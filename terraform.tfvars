@@ -1,4 +1,4 @@
-B_name = "aws-b-test998"
-B_tags = "my_bucket"
-B_env = "Dev"
-B_acl = "private"
+B_name = "$name_B"
+B_tags = "$tag_B"
+B_env = "$env_B"
+B_acl = "$acl_B"
