@@ -14,6 +14,7 @@ phases:
       - echo Initializing Terraform...
       - cd S3
       - echo $PWD
+      - ls
       - terraform init
   build:
     commands:
