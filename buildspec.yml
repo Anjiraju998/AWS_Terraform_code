@@ -12,7 +12,6 @@ phases:
     commands:
       - echo Configuring AWS credentials...
       - echo Initializing Terraform...
-      - echo $PWD
       - terraform init
   build:
     commands:
