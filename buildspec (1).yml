@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Terraform....
+      - curl -o terraform.zip https://releases.hashicorp.com/terraform/0.14.8/terraform_0.14.8_linux_amd64.zip
+      - unzip terraform.zip
+      - sudo mv terraform /usr/local/bin/
+      - rm terraform.zip
+  pre_build:
+    commands:
+      - echo Configuring AWS credentials...
+      - echo Initializing Terraform...
+      - terraform init
+  build:
+    commands:
+      - echo Running Terraform plan...
+      - terraform plan -out=tfplan
+      - echo Running Terraform apply...
+      - terraform apply -auto-approve
+  post_build:
+    commands:
+      - echo Cleaning up Terraform files...
+      - rm tfplan
