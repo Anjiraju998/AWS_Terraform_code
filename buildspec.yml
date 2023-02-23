@@ -21,7 +21,7 @@ phases:
       - terraform plan -out=tfplan
       - echo Running Terraform apply...
 #     - terraform apply -auto-approve
-      - terraform destroy -auto-approve
+#     - terraform destroy -auto-approve
   post_build:
     commands:
       - echo Cleaning up Terraform files...
